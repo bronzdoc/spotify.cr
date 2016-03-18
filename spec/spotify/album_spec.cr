@@ -18,6 +18,10 @@ describe Spotify::Album do
   context "when parsing from JSON" do
     let(album) { Spotify::Album.from_json(response) }
 
+    it "populates the album type" do
+      expect(album.album_type).to eq("album")
+    end
+
     it "populates the id" do
       expect(album.id).to eq("7rSZXXHHvIhF4yUFdaOCy9")
     end

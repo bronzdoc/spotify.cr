@@ -4,6 +4,7 @@ module Spotify
   class Album < Resource
     @@resource = "albums"
     JSON.mapping({
+      album_type: String,
       id:         String,
       name:       String,
       popularity: Int32,
