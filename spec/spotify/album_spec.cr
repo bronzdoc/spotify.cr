@@ -72,5 +72,10 @@ describe Spotify::Album do
       expect(album.images.size).to eq(3)
       expect(album.images).to be_a(Array(Spotify::Image))
     end
+
+    it "should populate release_date" do
+      expect(album.release_date).to be_a(String)
+      expect(album.release_date).to eq("1983")
+    end
   end
 end

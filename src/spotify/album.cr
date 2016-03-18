@@ -34,6 +34,7 @@ module Spotify
       popularity:        Int32,
       href:              String,
       images:            Array(Image),
+      release_date:      String,
     })
   end
 end
