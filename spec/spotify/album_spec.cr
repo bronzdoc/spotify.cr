@@ -30,6 +30,13 @@ describe Spotify::Album do
       expect(album.available_markets).to be_a(Array(String))
     end
 
+    it "should populate copyrights" do
+      expect(album.copyrights).to be_a(Array(Spotify::Copyright))
+      expect(album.copyrights.size).to eq(1)
+      expect(album.copyrights.first.text).to eq("(P) 2000 Sony Music Entertainment Inc.")
+      expect(album.copyrights.first.type).to eq("P")
+    end
+
     it "populates the id" do
       expect(album.id).to eq("7rSZXXHHvIhF4yUFdaOCy9")
     end
