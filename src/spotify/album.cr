@@ -68,6 +68,7 @@ module Spotify
       release_date_precision: String,
       tracks:                 AlbumTracks,
       type:                   String,
+      uri:                    String,
     })
   end
 end

@@ -103,5 +103,10 @@ describe Spotify::Album do
       expect(album.type).to be_a(String)
       expect(album.type).to eq("album")
     end
+
+    it "should populate uri" do
+      expect(album.uri).to be_a(String)
+      expect(album.uri).to eq("spotify:album:0sNOF9WDwhWunNAHPD3Baj")
+    end
   end
 end
