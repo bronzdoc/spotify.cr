@@ -37,6 +37,11 @@ describe Spotify::Album do
       expect(album.copyrights.first.type).to eq("P")
     end
 
+    it "should populate external_ids" do
+      expect(album.external_ids).to be_a(Hash(String, String))
+      expect(album.external_ids["upc"]).to eq("5099749994324")
+    end
+
     it "populates the id" do
       expect(album.id).to eq("7rSZXXHHvIhF4yUFdaOCy9")
     end

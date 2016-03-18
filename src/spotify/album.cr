@@ -26,6 +26,7 @@ module Spotify
       artists:           Array(AlbumArtist),
       available_markets: Array(String),
       copyrights:        Array(Copyright),
+      external_ids:      Hash(String, String),
       id:                String,
       name:              String,
       popularity:        Int32,
