@@ -82,5 +82,21 @@ describe Spotify::Album do
       expect(album.release_date_precision).to be_a(String)
       expect(album.release_date_precision).to eq("year")
     end
+
+    it "should populate tracks" do
+      expect(album.tracks).to be_a(Spotify::AlbumTracks)
+      expect(album.tracks.items).to    be_a(Array(Spotify::AlbumTrack))
+      expect(album.tracks.limit).to    be_a(Int32)
+      expect(album.tracks.next).to     be_a(Nil)
+      expect(album.tracks.offset).to   be_a(Int32)
+      expect(album.tracks.previous).to be_a(Nil)
+      expect(album.tracks.total).to    be_a(Int32)
+
+      expect(album.tracks.limit).to    eq(50)
+      expect(album.tracks.next).to     eq(nil)
+      expect(album.tracks.offset).to   eq(0)
+      expect(album.tracks.previous).to eq(nil)
+      expect(album.tracks.total).to    eq(13)
+    end
   end
 end

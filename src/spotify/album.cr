@@ -12,6 +12,36 @@ module Spotify
     })
   end
 
+  class AlbumTrack
+    JSON.mapping({
+      artists:           Array(AlbumArtist),
+      available_markets: Array(String),
+      disc_number:       Int32,
+      duration_ms:       Int32,
+      explicit:          Bool,
+      external_urls:     Hash(String, String),
+      href:              String,
+      id:                String,
+      name:              String,
+      preview_url:       String,
+      track_number:      Int32,
+      type:              String,
+      uri:               String,
+    })
+  end
+
+  class AlbumTracks
+    JSON.mapping({
+      href:     String,
+      items:    Array(AlbumTrack),
+      limit:    Int32,
+      next:     { type: String, nilable: true },
+      offset:   Int32,
+      previous: { type: String, nilable: true },
+      total:    Int32,
+    })
+  end
+
   class Copyright
     JSON.mapping({
       text: String,
@@ -36,6 +66,7 @@ module Spotify
       images:                 Array(Image),
       release_date:           String,
       release_date_precision: String,
+      tracks:                 AlbumTracks,
     })
   end
 end
