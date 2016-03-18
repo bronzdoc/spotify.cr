@@ -22,6 +22,10 @@ describe Spotify::Album do
       expect(album.album_type).to eq("album")
     end
 
+    it "should populate artists" do
+      expect(album.artists).to be_a(Array(Spotify::AlbumArtist))
+    end
+
     it "populates the id" do
       expect(album.id).to eq("7rSZXXHHvIhF4yUFdaOCy9")
     end
