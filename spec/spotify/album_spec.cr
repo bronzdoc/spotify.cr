@@ -42,6 +42,11 @@ describe Spotify::Album do
       expect(album.external_ids["upc"]).to eq("5099749994324")
     end
 
+    it "should populate external_urls" do
+      expect(album.external_urls).to be_a(Hash(String, String))
+      expect(album.external_urls["spotify"]).to eq("https://open.spotify.com/album/0sNOF9WDwhWunNAHPD3Baj")
+    end
+
     it "populates the id" do
       expect(album.id).to eq("7rSZXXHHvIhF4yUFdaOCy9")
     end
