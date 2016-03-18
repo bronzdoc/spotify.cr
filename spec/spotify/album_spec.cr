@@ -77,5 +77,10 @@ describe Spotify::Album do
       expect(album.release_date).to be_a(String)
       expect(album.release_date).to eq("1983")
     end
+
+    it "should populate release_date_precision" do
+      expect(album.release_date_precision).to be_a(String)
+      expect(album.release_date_precision).to eq("year")
+    end
   end
 end

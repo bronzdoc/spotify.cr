@@ -22,19 +22,20 @@ module Spotify
   class Album < Resource
     @@resource = "albums"
     JSON.mapping({
-      album_type:        String,
-      artists:           Array(AlbumArtist),
-      available_markets: Array(String),
-      copyrights:        Array(Copyright),
-      external_ids:      Hash(String, String),
-      external_urls:     Hash(String, String),
-      genres:            Array(String),
-      id:                String,
-      name:              String,
-      popularity:        Int32,
-      href:              String,
-      images:            Array(Image),
-      release_date:      String,
+      album_type:             String,
+      artists:                Array(AlbumArtist),
+      available_markets:      Array(String),
+      copyrights:             Array(Copyright),
+      external_ids:           Hash(String, String),
+      external_urls:          Hash(String, String),
+      genres:                 Array(String),
+      id:                     String,
+      name:                   String,
+      popularity:             Int32,
+      href:                   String,
+      images:                 Array(Image),
+      release_date:           String,
+      release_date_precision: String,
     })
   end
 end
