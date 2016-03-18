@@ -42,20 +42,13 @@ module Spotify
     })
   end
 
-  class Copyright
-    JSON.mapping({
-      text: String,
-      type: String,
-    })
-  end
-
   class Album < Resource
     @@resource = "albums"
     JSON.mapping({
       album_type:             String,
       artists:                Array(AlbumArtist),
       available_markets:      Array(String),
-      copyrights:             Array(Copyright),
+      copyrights:             Array(Hash(String, String)),
       external_ids:           Hash(String, String),
       external_urls:          Hash(String, String),
       genres:                 Array(String),
