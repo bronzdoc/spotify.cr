@@ -98,5 +98,10 @@ describe Spotify::Album do
       expect(album.tracks.previous).to eq(nil)
       expect(album.tracks.total).to    eq(13)
     end
+
+    it "should populate type" do
+      expect(album.type).to be_a(String)
+      expect(album.type).to eq("album")
+    end
   end
 end
