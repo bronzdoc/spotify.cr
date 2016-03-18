@@ -47,6 +47,11 @@ describe Spotify::Album do
       expect(album.external_urls["spotify"]).to eq("https://open.spotify.com/album/0sNOF9WDwhWunNAHPD3Baj")
     end
 
+    it "should populate genres" do
+      expect(album.genres).to be_a(Array(String))
+      expect(album.genres.empty?).to be_true
+    end
+
     it "populates the id" do
       expect(album.id).to eq("7rSZXXHHvIhF4yUFdaOCy9")
     end

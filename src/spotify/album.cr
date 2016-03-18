@@ -28,6 +28,7 @@ module Spotify
       copyrights:        Array(Copyright),
       external_ids:      Hash(String, String),
       external_urls:     Hash(String, String),
+      genres:            Array(String),
       id:                String,
       name:              String,
       popularity:        Int32,
